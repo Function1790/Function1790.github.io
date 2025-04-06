@@ -1,98 +1,96 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="icon" href="/img/logo.png" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/menu.detail.css">
-    <link rel="stylesheet" href="/css/dock.css">
-    <link rel="stylesheet" href="/css/desktop.css">
-    <link rel="stylesheet" href="/css/programs.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2진수 변환기</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f4f8;
+    }
+    .converter {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-family: monospace;
+      color: #333;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="root flex-col">
-        <div class="menu flex-row">
-            <div class="menu-header flex-row">
-                <div class="menu-logo">
-                    <img src="/img/logo.png" class="menu-logo-img">
-                </div>
-                <div class="menu-tool menu-username text">root</div>
-                <div class="menu-tool-wrap flex-row">
-                    <div class="menu-tool">파일</div>
-                    <div class="menu-tool">편집</div>
-                    <div class="menu-tool">보기</div>
-                    <div class="menu-tool">이동</div>
-                    <div class="menu-tool">윈도우</div>
-                    <div class="menu-tool">도움말</div>
-                </div>
-                
-            </div>
-            <div class="menu-footer flex-row">
-                <div class="menu-clock">5월6일(일)19:40</div>
-            </div>
-        </div>
-        <div class="desktop">
-            <div class="menu-tool-detail-wrap flex-row">
-                <div class="menu-detail">
-                    <div class="detail-line">새로운 Finder 윈도우</div>
-                    <div class="detail-line">새로운 폴더</div>
-                    <div class="detail-line">새로운 스마트 폴더</div>
-                    <div class="detail-line">새로운 웹</div>
-                    <div class="detail-line">열기</div>
-                    <div class="detail-line">다음으로 열기</div>
-                    <div class="detail-line">윈도우 닫기</div>
-                    <div class="detail-br"></div>
-                    <div class="detail-line">정보 가져오기</div>
-                    <div class="detail-line">이름 변경</div>
-                    <div class="detail-line">압축</div>
-                    <div class="detail-line">복제</div>
-                    <div class="detail-line">훑어보기</div>
-                    <div class="detail-line">공유</div>
-                    <div class="detail-br"></div>
-                    <div class="detail-line">찾기</div>
-                </div>
-            </div>
-            <div class="drag-rect"></div>
-            <script src="/src/program.js"></script>
-        </div>
-        <div class="dock-wrap">
-            <div class="dock flex-row center">
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/safari.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/vscode.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/terminal.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img onclick="openProgram('calc')" src="/img/icon/calc.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/notion.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img onclick="openProgram('github')" src="/img/icon/github.png" class="program-icon">
-                </div>
-                <div class="program-icon-slash"></div>
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/folder.png" class="program-icon">
-                </div>
-                <div class="program-icon-wrap">
-                    <img src="/img/icon/bin.png" class="program-icon">
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="/src/menu.clock.js"></script>
-    <script src="/src/dock.js"></script>
-    <script src="/src/desktop.js"></script>
-</body>
+  <div class="converter">
+    <h2>10진수를 2진수로 변환</h2>
+    <input type="number" id="decimal" onchange="convert()" placeholder="10진수 입력" />
+    <br>
+    <button onclick="convert()">변환</button>
+    <div class="result" id="binaryResult"></div>
+  </div>
 
+  <script>
+    function toBinaryFormat(binStr, length = 8) {
+      binStr = binStr.padStart(length, '0');
+      let result = '';
+      for (let i = length - 1; i >= 0; i--) {
+        result = binStr[i] + result;
+        if ((length - i) % 4 === 0 && i > 0) {
+          result = ' ' + result;
+        }
+      }
+      return result;
+    }
+
+    function reverseBits(binStr) {
+      return [...binStr].map(bit => bit === '1' ? '0' : (bit === '0' ? '1' : bit)).join('');
+    }
+
+    function convert() {
+      const input = document.getElementById('decimal').value;
+      const value = parseInt(input);
+      const length = 8;
+
+      let binary;
+
+      if (isNaN(value)) {
+        binary = '유효한 숫자를 입력해주세요';
+      } else if (value >= 0) {
+        binary = toBinaryFormat(value.toString(2), length);
+      } else {
+        let bin = (-value).toString(2).padStart(length, '0');
+        let reversed = reverseBits(bin);
+        let twosComp = (parseInt(reversed, 2) + 1).toString(2);
+        binary = toBinaryFormat(twosComp, length);
+      }
+
+      document.getElementById('binaryResult').innerText = binary;
+    }
+  </script>
+</body>
 </html>
