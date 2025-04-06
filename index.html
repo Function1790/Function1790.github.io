@@ -48,7 +48,7 @@
 <body>
   <div class="converter">
     <h2>10진수를 2진수로 변환</h2>
-    <input type="number" id="decimal" onchange="convert()" placeholder="10진수 입력" />
+    <input type="number" id="decimal" onkeydown="convert()" placeholder="10진수 입력" />
     <br>
     <button onclick="convert()">변환</button>
     <div class="result" id="binaryResult"></div>
