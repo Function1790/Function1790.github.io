@@ -49,11 +49,18 @@
       font-family: monospace;
       color: #333;
     }
+
+    .small {
+      width: 100px;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
   <div class="converter">
+    <h3>비트 개수</h3>
+    <input type="number" class="small" id="bitLength" onkeyup="updateBitLength()" value="8" placeholder="비트 개수" />
     <h2>10진수를 2진수로 변환</h2>
     <input type="text" id="decimal" onkeyup="convert()" placeholder="10진수 입력" />
     <br>
@@ -70,6 +77,17 @@
   </div>
 
   <script>
+    let length = 8;
+    const inputBitLength = document.getElementById('bitLength');
+    function updateBitLength() {
+      length = Number(inputBitLength.value)
+      if(isNaN(length)) {
+        length = 8;
+      }
+      convert()
+      convert2to10()
+    }
+
     function toBinaryFormat(binStr, length = 8) {
       binStr = binStr.padStart(length, '0');
       let result = '';
@@ -89,7 +107,6 @@
     function convert() {
       const input = document.getElementById('decimal').value;
       const value = parseInt(input);
-      const length = 8;
 
       let binary;
 
@@ -122,13 +139,12 @@
     function convert2to10() {
       const input = document.getElementById('binary').value;
       const value = input;
-      const length = 8;
 
       let demical = BinToDec(value);;
       
       if (value[0] == '1') {
         let negative = (demical - 1).toString(2);
-        negative = reverseBits(toBinaryFormat(negative));
+        negative = reverseBits(toBinaryFormat(negative, length));
         negative = -BinToDec(negative);
         result2to10.innerText = `부호비트가 없는 경우 : ${demical}`;
         result2to10n.innerText = `부호비트가 있는 경우 : ${negative}`
