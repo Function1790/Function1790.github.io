@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
       height: 100vh;
       background-color: #f0f4f8;
     }
+
     .converter {
       background-color: #fff;
       padding: 30px;
@@ -20,6 +22,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
+
     input {
       padding: 10px;
       font-size: 16px;
@@ -28,6 +31,7 @@
       margin-bottom: 10px;
       width: 200px;
     }
+
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -37,21 +41,32 @@
       color: white;
       cursor: pointer;
     }
+
     .result {
       margin-top: 20px;
       font-size: 18px;
+      height: 16px;
       font-family: monospace;
       color: #333;
     }
   </style>
 </head>
+
 <body>
   <div class="converter">
     <h2>10진수를 2진수로 변환</h2>
-    <input type="number" id="decimal" placeholder="10진수 입력" />
+    <input type="text" id="decimal" onkeyup="convert()" placeholder="10진수 입력" />
     <br>
     <button onclick="convert()">변환</button>
     <div class="result" id="binaryResult"></div>
+
+    <h2>2진수를 10진수로 변환</h2>
+    <input type="text" id="binary" onkeyup="convert2to10()" placeholder="10진수 입력" />
+    <br>
+    <button onclick="convert2to10()">변환</button>
+    <div class="result" id="demicalResult"></div>
+    <div class="result" id="demicalResult2"></div>
+
   </div>
 
   <script>
@@ -92,5 +107,37 @@
       document.getElementById('binaryResult').innerText = binary;
     }
   </script>
+  <script>
+    function BinToDec(binary) {
+      binary = binary.replaceAll(' ', '')
+      result = 0
+      for (var i = 0; i < binary.length; i++) {
+        result += 2 ** (binary.length - i - 1) * (binary[i] === '1' ? 1 : 0)
+      }
+      return result
+    }
+
+    const result2to10 = document.getElementById('demicalResult')
+    const result2to10n = document.getElementById('demicalResult2')
+    function convert2to10() {
+      const input = document.getElementById('binary').value;
+      const value = input;
+      const length = 8;
+
+      let demical = BinToDec(value);;
+      
+      if (value[0] == '1') {
+        let negative = (demical - 1).toString(2);
+        negative = reverseBits(toBinaryFormat(negative));
+        negative = -BinToDec(negative);
+        result2to10.innerText = `부호비트가 없는 경우 : ${demical}`;
+        result2to10n.innerText = `부호비트가 있는 경우 : ${negative}`
+      } else {
+        result2to10.innerText = `부호비트에 상관 없이 : ${demical}`;
+        result2to10n.innerText = ``;
+      }
+    }
+  </script>
 </body>
+
 </html>
