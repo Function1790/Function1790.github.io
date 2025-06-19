@@ -1,159 +1,85 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2진수 변환기</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f4f8;
-    }
-
-    .converter {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      width: 200px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background-color: #4caf50;
-      color: white;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 20px;
-      font-size: 18px;
-      height: 16px;
-      font-family: monospace;
-      color: #333;
-    }
-
-    .small {
-      width: 100px;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <title>Function1790</title>
 </head>
-
 <body>
-  <div class="converter">
-    <h3>비트 개수</h3>
-    <input type="number" class="small" id="bitLength" onkeyup="updateBitLength()" value="8" placeholder="비트 개수" />
-    <h2>10진수를 2진수로 변환</h2>
-    <input type="text" id="decimal" onkeyup="convert()" placeholder="10진수 입력" />
-    <br>
-    <button onclick="convert()">변환</button>
-    <div class="result" id="binaryResult"></div>
+  <nav>
+    <header>
+      Function1790
+    </header>
+  </nav>
+  <section class="title-section">
+    <div class="typing">...</div>
+    <p>hello<span class="cursor">.</span></p>
+  </section>
+  <section>
+    <h2>About Me</h2>
+    <div class="content">
+      <h3>Who Am I</h3>
+      <p>
+      익숙함을 낯설게 바라보며,<br>
+      문제 속에서 새로운 규칙을 발견하는<br>
+      백엔드 개발자 이재헌입니다.<br>
+      </p>
+    </div>
+    <div class="content">
+      <h3>What I Do</h3>
+      <p>
+      당연하게 여겨지는 시스템 구조와 흐름 속에서<br>
+      의문을 품고, 더 나은 설계와 보안을 고민합니다.<br>
+      사용자와 개발자를 모두 이해하려 노력하는<br>
+      균형 감각 있는 개발을 지향합니다.<br>
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>Skills</h2>
+    <div class="content">
+      <h3>Languages</h3>
+      <p>
+        <div class="list-table">
+          <div class="left">
+            R, C, <br>
+            Python,<br>
+            Javascript,<br>
+          </div>
+          <div class="right">
+            C#<br>
+            Java<br>
+            Typescript<br>
+          </div>
+        </div>
+      </p>
+    </div>
+    <div class="content">
+      <h3>Frameworks</h3>
+      <p>
+        WPF, Express, NestJS
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>Projects</h2>
+    <div class="content">
+      <h3>Wear&Share</h3>
+      <p>
 
-    <h2>2진수를 10진수로 변환</h2>
-    <input type="text" id="binary" onkeyup="convert2to10()" placeholder="10진수 입력" />
-    <br>
-    <button onclick="convert2to10()">변환</button>
-    <div class="result" id="demicalResult"></div>
-    <div class="result" id="demicalResult2"></div>
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>Contact</h2>
+    <div class="content">
+      <h3>Insta</h3>
+      <p>
 
-  </div>
-
-  <script>
-    let length = 8;
-    const inputBitLength = document.getElementById('bitLength');
-    function updateBitLength() {
-      length = Number(inputBitLength.value)
-      if(isNaN(length)) {
-        length = 8;
-      }
-      convert()
-      convert2to10()
-    }
-
-    function toBinaryFormat(binStr, length = 8) {
-      binStr = binStr.padStart(length, '0');
-      let result = '';
-      for (let i = length - 1; i >= 0; i--) {
-        result = binStr[i] + result;
-        if ((length - i) % 4 === 0 && i > 0) {
-          result = ' ' + result;
-        }
-      }
-      return result;
-    }
-
-    function reverseBits(binStr) {
-      return [...binStr].map(bit => bit === '1' ? '0' : (bit === '0' ? '1' : bit)).join('');
-    }
-
-    function convert() {
-      const input = document.getElementById('decimal').value;
-      const value = parseInt(input);
-
-      let binary;
-
-      if (isNaN(value)) {
-        binary = '유효한 숫자를 입력해주세요';
-      } else if (value >= 0) {
-        binary = toBinaryFormat(value.toString(2), length);
-      } else {
-        let bin = (-value).toString(2).padStart(length, '0');
-        let reversed = reverseBits(bin);
-        let twosComp = (parseInt(reversed, 2) + 1).toString(2);
-        binary = toBinaryFormat(twosComp, length);
-      }
-
-      document.getElementById('binaryResult').innerText = binary;
-    }
-  </script>
-  <script>
-    function BinToDec(binary) {
-      binary = binary.replaceAll(' ', '')
-      result = 0
-      for (var i = 0; i < binary.length; i++) {
-        result += 2 ** (binary.length - i - 1) * (binary[i] === '1' ? 1 : 0)
-      }
-      return result
-    }
-
-    const result2to10 = document.getElementById('demicalResult')
-    const result2to10n = document.getElementById('demicalResult2')
-    function convert2to10() {
-      const input = document.getElementById('binary').value;
-      const value = input;
-
-      let demical = BinToDec(value);;
-      
-      if (value[0] == '1') {
-        let negative = (demical - 1).toString(2);
-        negative = reverseBits(toBinaryFormat(negative, length));
-        negative = -BinToDec(negative);
-        result2to10.innerText = `부호비트가 없는 경우 : ${demical}`;
-        result2to10n.innerText = `부호비트가 있는 경우 : ${negative}`
-      } else {
-        result2to10.innerText = `부호비트에 상관 없이 : ${demical}`;
-        result2to10n.innerText = ``;
-      }
-    }
-  </script>
+      </p>
+    </div>
+  </section>
 </body>
-
+<script src="script.js"></script>
 </html>

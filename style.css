@@ -1,8 +1,103 @@
-body {
-    background-color: rgb(230, 230, 230);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-canvas {
+body {
+    background: linear-gradient(rgb(100, 100, 250), rgb(252, 195, 200));;
+    background-color: #040616;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 25px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+}
+
+nav > header {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.typing {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.cursor {
     background-color: white;
-    border: 3px solid black;
+    width: 10px;
+    height: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+p, .list-table > * {
+    text-align: center;
+    font-size: 16px;
+    color: rgba(225, 225, 225, 0.87);
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 70px;
+}
+
+h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.list-table {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-table > .left {
+    display: flex;
+    text-align: right;
+    padding-right: 2px;
+}
+
+.list-table > .right {
+    display: flex;
+    text-align: left;
+    padding-left: 2px;
+}
+
+.img-table {
+    display: block;
+}
+
+.img-table > img {
+    width: 50px;
 }
