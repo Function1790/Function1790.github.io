@@ -7,8 +7,8 @@
 }
 
 body {
-    background: linear-gradient(rgb(100, 100, 250), rgb(252, 195, 200));;
-    background-color: #040616;
+    background: linear-gradient(rgb(100, 100, 250), rgb(100, 100, 250));
+    background-color: #06091f;
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -17,18 +17,20 @@ body {
     font-size: 25px;
 }
 
+.title-section {}
+
 nav {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     width: 100%;
     height: 50px;
     padding: 0 15px;
 }
 
-nav > header {
+nav>header {
     font-weight: 600;
     font-size: 20px;
 }
@@ -40,8 +42,10 @@ nav > header {
 
 .cursor {
     background-color: white;
-    width: 10px;
-    height: 20px;
+    color: transparent;
+    width: 2px;
+    height: 50px;
+    font-size: 32px;
 }
 
 .content {
@@ -61,7 +65,8 @@ section {
     width: 100%;
 }
 
-p, .list-table > * {
+p,
+.list-table>* {
     text-align: center;
     font-size: 16px;
     color: rgba(225, 225, 225, 0.87);
@@ -82,13 +87,13 @@ h3 {
     flex-direction: row;
 }
 
-.list-table > .left {
+.list-table>.left {
     display: flex;
     text-align: right;
     padding-right: 2px;
 }
 
-.list-table > .right {
+.list-table>.right {
     display: flex;
     text-align: left;
     padding-left: 2px;
@@ -98,6 +103,155 @@ h3 {
     display: block;
 }
 
-.img-table > img {
+.img-table>img {
     width: 50px;
+}
+
+/* Fade-Up */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Projects */
+.projects-section>h2 {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.project-list {
+    width: 450;
+    padding: 25px 25px;
+    background-color: rgb(90, 90, 231);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.096);
+    background: blur(5px);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.03);
+}
+
+.project-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* Projects Anm */
+.project-item {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.project-item.left.show {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.project-item.right.show {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Contacts */
+.contact-section {
+    padding: 80px 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #ffffff;
+    /* 포인트 컬러 */
+}
+
+.contact-value {
+    color: #ffffff;
 }
