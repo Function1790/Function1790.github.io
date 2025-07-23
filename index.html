@@ -1,58 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Function1790</title>
+  <script>
+    function go(url) {
+      document.location = url;
+    }
+  </script>
 </head>
+
 <body>
   <nav>
     <header>
       Function1790
     </header>
   </nav>
-  <section class="title-section">
-    <div class="typing">...</div>
+  <section class="frame title-section">
+    <div class="frame-img"></div>
+    <div class="overlap-group">
+      <div class="center">
+        <img class="ellipse" src="img/prof.jpg" />
+      </div>
+      <div class="text-wrapper">Function1790</div>
+    </div>
+    <div class="grad-text">Backend Developer</div>
+    <p class="p" hidden>당연함에 의문을 던지고, 익숙함 속에서 새로움을 찾습니다.</p>
+
   </section>
   <section class="fade-up">
-    <h2>About Me</h2>
-    <div class="content">
-      <h3>Who Am I</h3>
-      <p>
-      익숙함을 낯설게 바라보며,<br>
-      문제 속에서 새로운 규칙을 발견하는<br>
-      백엔드 개발자 이재헌입니다.<br>
-      </p>
+    <div class="h2-wrap">
+      <h2>About Me</h2>
+      <div class="grad-text">Get to know me</div>
     </div>
     <div class="content">
-      <h3>What I Do</h3>
       <p>
-      당연하게 여겨지는 시스템 구조와 흐름 속에서<br>
-      의문을 품고, 더 나은 설계와 보안을 고민합니다.<br>
-      사용자와 개발자를 모두 이해하려 노력하는<br>
-      균형 감각 있는 개발을 지향합니다.<br>
+        안녕하세요! 저는 시스템의 흐름을 설계하고, 눈에 보이지 않는 곳에서<br>
+        사용자 경험을 지탱하는 백엔드 개발자 이재헌입니다. <br>
+        <br>
+        당연함에 의문을 던지고, 익숙함 속에서 새로움을 찾는 자세로,<br>
+        작동하지 않는 기능은 직접 구현하며 기술적 문제를 해결해왔습니다.<br>
+        <br>
+        기능 구현보다 구조 설계에 집중합니다.<br>
+        동작하지 않는 것은 직접 만들고, 익숙한 흐름도 다시 의심합니다.<br>
+        당연한 로직도 한 번 더 뜯어보며, 성능과 확장성을 함께 고민하는 백엔드 개발자입니다.<br>
       </p>
     </div>
   </section>
   <section class="fade-up">
-    <h2>Skills</h2>
+    <div class="h2-wrap">
+      <h2>What can I do</h2>
+      <div class="grad-text">Get to know me</div>
+    </div>
     <div class="content">
       <h3>Languages</h3>
       <p>
-        <div class="list-table">
-          <div class="left">
-            R, C, <br>
-            Python,<br>
-            Javascript,<br>
-          </div>
-          <div class="right">
-            C#<br>
-            Java<br>
-            Typescript<br>
-          </div>
+      <div class="list-table">
+        <div class="left">
+          R, C, <br>
+          Python,<br>
+          Javascript,<br>
         </div>
+        <div class="right">
+          C#<br>
+          Java<br>
+          Typescript<br>
+        </div>
+      </div>
       </p>
     </div>
     <div class="content">
@@ -63,9 +82,76 @@
     </div>
   </section>
   <section class="projects-section">
-    <h2>Projects</h2>
-    <div class="project-list">
-    
+    <div class="h2-wrap">
+      <h2>Projects</h2>
+      <div class="grad-text">Some of my Work</div>
+      <div class="button-group">
+        <button class="pill selected">All</button>
+        <button class="pill">Express</button>
+        <button class="pill">NestJS</button>
+      </div>
+
+    </div>
+    <!--Projects-->
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="/img/wearandshare.png" alt="Wear & Share" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">Wear & Share</div>
+          <div class="project-tags">NestJS / Outsourcing </div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/img/kakao.png" alt="KakaoTalk Clone Coding" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">KakaoTalk Clone</div>
+          <div class="project-tags">NestJS / Socket.io</div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/img/bookroot.jpg" alt="Book Root" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">Book Root</div>
+          <div class="project-tags">NestJS / Outsourcing</div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/img/seodang.jpg" alt="서령 당근" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">서령 당근</div>
+          <div class="project-tags">Express / Student Council</div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/img/idcard.png" alt="임시 학생증" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">임시 학생증</div>
+          <div class="project-tags">Express / Deployment</div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="/img/tshop.png" alt="T-Shop" class="project-thumbnail" />
+        <div class="project-info">
+          <div class="project-title">T-Shop</div>
+          <div class="project-tags">Express / Deployment</div>
+          <div class="project-link"><span>↗</span></div>
+        </div>
+      </div>
+
+      <!-- 반복... -->
+    </div>
+    <div class="project-list" style="display: none;">
+
       <div class="project-item slide-in left">
         <img src="/img/wearandshare.png">
         <p class="project-name">Wear & Share</p>
@@ -94,24 +180,35 @@
     </div>
   </section>
   <section class="contact-section fade-up">
-  <h2 class="section-title">Contacts</h2>
-  <div class="contact-list">
-    <div class="contact-item">
-      <div>
-        <i class="fab fa-instagram"></i>
-        <span class="contact-label">Instagram</span>
-      </div>
-      <span class="contact-value">@jheon._.lee06</span>
+    <div class="h2-wrap">
+      <h2>Contacts</h2>
+      <div class="grad-text">Lets work together</div>
     </div>
-    <div class="contact-item">
-      <div>
-        <i class="fab fa-github"></i>
-        <span class="contact-label">GitHub</span>
+    <div class="contact-list">
+      <div class="contact-item">
+        <div>
+          <i class="fab fa-google"></i>
+          <span class="contact-label">Email</span>
+        </div>
+        <span class="contact-value">korean1790@gmail.com</span>
       </div>
-      <span class="contact-value">Function1790</span>
+      <div class="contact-item" onclick="go('https://www.instagram.com/jheon._.lee06/')">
+        <div>
+          <i class="fab fa-instagram"></i>
+          <span class="contact-label">Instagram</span>
+        </div>
+        <span class="contact-value">@jheon._.lee06</span>
+      </div>
+      <div class="contact-item" onclick="go('https://github.com/Function1790')">
+        <div>
+          <i class="fab fa-github"></i>
+          <span class="contact-label">GitHub</span>
+        </div>
+        <span class="contact-value">Function1790</span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </body>
-<script src="script.js"></script>
+<script src="/src/script.js"></script>
+
 </html>

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*background: linear-gradient(rgb(100, 100, 250), rgb(100, 100, 250));*/
+  background: #1A1A1A;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 25px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grad-text {
+  background: linear-gradient(91deg,
+      rgba(79, 195, 247, 1) 0%,
+      rgba(255, 255, 255, 1) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-weight: 600;
+  color: transparent;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.h2-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 35px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.h2-wrap .grad-text {
+  font-size: 15px;
+}
+
+h2:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+p,
+.list-table>* {
+    text-align: center;
+    font-size: 15px;
+    color: rgba(225, 225, 225, 0.87);
+}
