@@ -12,6 +12,10 @@ h2 {
    font-size: 1.3em;
 }
 
+h2:hover {
+   transform: translateX(0.1em);
+}
+
 h3 {
    margin-top: 1em;
    font-size: 1.0em;
@@ -26,10 +30,15 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-direction: column;
+}
+
+#space {
+   width: 1px;
+   height: 60px;
 }
 
 #content {
-   margin-top: 60px;
    padding: 1em;
    font-family: sans-serif;
    min-width: 400px;
@@ -89,4 +98,15 @@ br {
 .desc-value {
    flex: 1;
    text-align: right;
+}
+
+.main-img-wrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#main-img {
+   min-width: 600px;
+   width: 60%;
 }

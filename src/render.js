@@ -46,8 +46,11 @@ async function render(mdPath) {
 
       // 이미지 처리
       const imgMatch = line.match(/^img\(['"](.+?)['"]\)$/);
+      const bgImgMatch = line.match(/^bgImg\(['"](.+?)['"]\)$/);
       if (imgMatch) {
         html += `<img src="${imgMatch[1]}" alt="">`;
+      } else if (bgImgMatch) {
+        html += `<div class="main-img-wrap"><img src="${bgImgMatch[1]}" id="main-img"></div>`;
       } else if (line !== "") {
         html += `<p>${parseInline(line)}</p>`;
       } else {
