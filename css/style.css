@@ -395,3 +395,17 @@ nav>header {
 .project-link:hover {
     background-color: #1c70df;
 }
+
+@media (max-width: 470px) {
+    body {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 0.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+}
