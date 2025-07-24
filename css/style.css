@@ -12,9 +12,14 @@ nav {
     z-index: 10;
 }
 
-nav>header {
+nav>header,
+nav>header>a {
     font-weight: 600;
     font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white
 }
 
 .typing {
@@ -403,7 +408,9 @@ nav>header {
         font-size: 17px;
     }
 
-    p, .left, .right {
+    p,
+    .left,
+    .right {
         font-size: 0.8em;
     }
 
@@ -413,7 +420,7 @@ nav>header {
     }
 
     .text-wrapper {
-        
+
         font-size: 1.8em
     }
 
