@@ -1,9 +1,10 @@
 # Wear & Share
 <desc>개발 기간|2025-03-24 ~ 2025-04-29</desc>
 <desc>프로젝트 유형|외주</desc>
-<desc>소스코드|<a>https://github.com/Function1790/KakaoTalk-Clonecoding</a></desc>
+<desc>소스코드|<a>https://github.com/Function1790/Wear-and-Share</a></desc>
 ## 소개
 Wear-and-Share는 온라인 의류 쇼핑몰 기능과 중고 거래 시스템을 통합한 플랫폼의 서버를 구축한 **<red>외주 프로젝트</red>**입니다. NestJS 기반으로 개발되었으며, 효율적이고 확장 가능한 서버 환경을 구현하는 것을 목표로 합니다. 이 프로젝트는 의존성 설치부터 테스트, 배포까지의 기본 개발 흐름을 갖추고 있어, 실제 서비스로 확장할 수 있는 백엔드 구조의 기반을 마련하는 데 중점을 두었습니다.
+
 ## 기술
 ---
 - NestJS를 이용한 백엔드 시스템 구축
