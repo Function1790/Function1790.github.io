@@ -9,9 +9,10 @@
 
 ## 기술
 ---
-- NestJS를 이용한 백엔드 시스템 구축
-- MySQL과 TypeORM을 이용한 데이터베이스 관리
-- **WebSocket**을 이용해 실시간 1:1, 1:N 통신 시스템 구현
+- NestJS
+- MySQL
+- TypeORM
+- **WebSocket**(1:1, 1:N)
 - WebSocket의 동작 오류 부분이 있는 시스템을 직접 설계
 - 채팅 방 단위로 클라이언트 관리
 - 친구 추가 및 방 생성 기능 구현

@@ -11,11 +11,12 @@ BOOK ROOT는 최신 도서부터 다양한 카테고리의 책을 편리하게 �
 
 ## 기술
 ---
-- Express를 사용한 백엔드 서버 구축
-- MySQL을 사용한 DB 설계 및 쿼리 최적화로 대용량 데이터의 효율적인 조회/정렬 구현
-- RESTful API 설계 및 구현 (회원가입, 구매, 포인트 처리 등 전반적인 쇼핑몰 기능 포함)
-- 세션 기반 인증 시스템 구현
-- 관리자/사용자 권한 분리를 통한 접근 제어 기능
-- 포인트 적립/사용 로직 구현을 통한 비즈니스 로직 처리 경험
-- 도서 랭킹 시스템 구현을 위한 정렬 로직 및 메인 노출 캐싱 전략 수립
-- 구매 흐름 (장바구니, 즉시 구매, 주문 내역 조회 등) 전체 로직 설계 및 구현
+- Express
+- MySQL
+- Sort Result
+- RESTful API
+- Session Authentication
+- Separating Administrator/User Permissions
+- Points Earned
+- Book Ranking System
+- Purchase Flow
